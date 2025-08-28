@@ -7,11 +7,8 @@ OBJS = $(SRCS:.c=.o)
 
 HEADER = ft_printf.h
 
-LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
-
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR)
+CFLAGS = -Wall -Wextra -Werror
 
 AR = ar rcs
 RM = rm -rf
@@ -19,21 +16,16 @@ RM = rm -rf
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
-
-$(NAME): $(OBJS) $(LIBFT)
+$(NAME): $(OBJS)
 	$(AR) $@ $^
 
 all: $(NAME)
 
 clean:
 	$(RM) $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
