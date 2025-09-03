@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loena <loena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: loda-sil <loda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 18:20:54 by loda-sil          #+#    #+#             */
-/*   Updated: 2025/08/30 13:36:04 by loena            ###   ########.fr       */
+/*   Updated: 2025/09/03 12:19:31 by loda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
 int	ft_putstr(char *s)
 {
 	int	count;
@@ -30,6 +31,7 @@ int	ft_putstr(char *s)
 		count += ft_putchar(*s++);
 	return (count);
 }
+
 int	ft_putnbr(int n)
 {
 	long int	nbr;
@@ -50,17 +52,18 @@ int	ft_putnbr(int n)
 
 int	ft_putnbr_unsigned(unsigned int n)
 {
-	int count;
+	int	count;
 
 	count = 0;
-	if(n >= 10)
+	if (n >= 10)
 		count += ft_putnbr_unsigned(n / 10);
-	count += ft_putnbr_unsigned((n % 10) + 48);
+	count += ft_putchar((n % 10) + 48);
 	return (count);
 }
-int ft_puthexa(unsigned long int n, const char *base)
+
+int	ft_puthexa(unsigned long int n, const char *base)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (n >= 16)

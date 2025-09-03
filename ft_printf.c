@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loena <loena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: loda-sil <loda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 18:12:12 by loena             #+#    #+#             */
-/*   Updated: 2025/08/31 11:53:24 by loena            ###   ########.fr       */
+/*   Updated: 2025/09/03 12:20:21 by loda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_check_format(char format, va_list args)
 {
-	unsigned long int ptr_var;
+	unsigned long int	ptr_var;
 
 	if (format == '%')
 		return (ft_putchar('%'));
@@ -42,8 +42,8 @@ int	ft_check_format(char format, va_list args)
 
 int	ft_printf(const char *format, ...)
 {
-	int 	count;
-	va_list args;
+	int		count;
+	va_list	args;
 
 	count = 0;
 	va_start(args, format);
