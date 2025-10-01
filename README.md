@@ -33,5 +33,3 @@ int main(void)
 ```
 
 Compile with: `cc file.c libftprintf.a`
-
----
